@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ヘッダーとメインビジュアル</title>
+    <link rel="stylesheet" href="animate.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,7 +33,7 @@
 
     <section id="" class="card section">
 		<div class="card__inner inner">
-			<h2 class="section-title">Card</h2><!-- /.section-title -->
+			<h2 class="section-title section-title wow fadeInUp">Card</h2><!-- /.section-title -->
 			<div class="card__items">
 				<div class="card__item">
 					<a class="media" href="">
@@ -308,5 +309,10 @@
 
 	<div class="totop"><a href="#"><img src="images/totop.svg" alt="上部へスクロール"></a></div><!-- /.totop -->
 
+
+    <script src="js/wow.min.js"></script>
+	<script>
+		new WOW().init();
+	</script>
 </body>
 </html>
