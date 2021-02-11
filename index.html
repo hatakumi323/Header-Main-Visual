@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ヘッダーとメインビジュアル</title>
-    <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="libs/animate.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,6 +23,24 @@
 		</div><!-- /.header__inner -->
 	</header><!-- /.header -->
 
+	<button class="drawer-icon js-drawer for-drawer" type="button" data-target="for-drawer">
+		<span class="drawer-bars">
+			<span class="drawer-bar"></span>
+			<span class="drawer-bar"></span>
+			<span class="drawer-bar"></span>
+		</span>
+	</button><!-- /drawer-icon -->
+	<div class="drawer-background for-drawer"></div>
+	<div class="drawer-content for-drawer">
+		<ul>
+			<li><a href="">Card</a></li>
+			<li><a href="">News</a></li>
+			<li><a href="">Price</a></li>
+			<li><a href="">Access</a></li>
+			<li><a href="">Contact</a></li>
+		</ul>
+	</div><!-- /drawer-content -->
+
 	<div class="mainvisual">
 		<div class="mainvisual__content">
 			<div class="mainvisual__title">一番伝えたい<br class="hidden-tab hidden-pc">ことを書く</div><!-- /.mainvisual__title -->
@@ -33,8 +51,8 @@
 
     <section id="" class="card section">
 		<div class="card__inner inner">
-			<h2 class="section-title section-title wow fadeInUp">Card</h2><!-- /.section-title -->
-			<div class="card__items">
+			<h2 class="section-title">Card</h2><!-- /.section-title -->
+			<div class="card__items wow flipInX" data-wow-delay=".5s">
 				<div class="card__item">
 					<a class="media" href="">
 						<div class="media__img"><img src="images/card-img-1.svg" alt=""></div><!-- /.media__img -->
@@ -310,7 +328,17 @@
 	<div class="totop"><a href="#"><img src="images/totop.svg" alt="上部へスクロール"></a></div><!-- /.totop -->
 
 
-    <script src="js/wow.min.js"></script>
+    <script src="js/dist/wow.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script>
+		// ドロワー
+		jQuery(".js-drawer").on("click", function(e) {
+			e.preventDefault();
+			let targetClass = jQuery(this).attr("data-target");
+			jQuery("." + targetClass).toggleClass("is-checked");
+			return false;
+		});
+	</script>
 	<script>
 		new WOW().init();
 	</script>
